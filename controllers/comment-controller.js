@@ -27,7 +27,7 @@ const commentController = {
      {_id: params.commentId},
      //passes the replies body params
      {$push: {replies: body} },
-     {new:true}
+     {new:true, runValidators:true}
      )
      .then(dbPizzaData => {
        if(!dbPizzaData){
